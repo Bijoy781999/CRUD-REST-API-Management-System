@@ -1,16 +1,18 @@
 # CRUD-REST-API-Management-System
 CRUD REST API Management System is a full-stack web application developed during my Web Development Internship at Skill Dunia (with Odcet Technologies). Built with Node.js, Express.js, MongoDB, HTML, CSS, and JavaScript, it implements REST APIs, CRUD operations, Mongoose integration, validation, and error handling.
-# 📋 CRUD API Project
+# 📋 CRUD REST API Management System
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![License](https://img.shields.io/badge/License-ISC-blue?style=for-the-badge)
+![License](https://img.shields.io/badge/License-No%20License-lightgrey?style=for-the-badge)
 
-A full-stack **CRUD (Create, Read, Update, Delete)** web application for managing simple contact records — **Name, Email, and Phone Number**. The backend is a RESTful API built with **Node.js, Express 5, and MongoDB (Mongoose)**; the frontend is a lightweight, framework-free **HTML/CSS/JavaScript** client that talks to the API with `fetch`.
+A full-stack **CRUD (Create, Read, Update, Delete)** web application developed during my **Web Development Internship at Skill Dunia (in association with Odcet Technologies)**. The project demonstrates the implementation of a RESTful backend using **Node.js**, **Express.js**, and **MongoDB**, along with a responsive frontend built with **HTML, CSS, and JavaScript**. It enables users to perform Create, Read, Update, and Delete (CRUD) operations through an intuitive interface while showcasing REST API development, MongoDB integration with Mongoose, input validation, error handling, CORS configuration, and asynchronous client-server communication.
 
-## 📖 Table of Contents
+---
+
+# 📖 Table of Contents
 
 - [About the Project](#about-the-project)
 - [Features](#features)
@@ -27,266 +29,315 @@ A full-stack **CRUD (Create, Read, Update, Delete)** web application for managin
 - [Acknowledgements](#acknowledgements)
 - [Author](#author)
 
-## About the Project
+---
 
-This project demonstrates a complete CRUD workflow split into two independent parts:
+# 📖 About the Project
 
-- **`backend/`** — An Express REST API that stores records in MongoDB via Mongoose and exposes `GET`, `POST`, `PUT`, and `DELETE` endpoints under `/api/items`.
-- **`frontend/`** — A single static HTML page with vanilla JavaScript that consumes the API: it lists existing records, validates form input in real time, and lets you add, edit, and delete entries.
+This project demonstrates a complete CRUD workflow consisting of two independent modules:
 
-The two parts run independently — the frontend is a static file that calls the backend over HTTP, so you can open it directly in a browser as long as the API server is running.
+- **Source Code/Backend** – A RESTful API built with Express.js that stores records in MongoDB using Mongoose and exposes **GET**, **POST**, **PUT**, and **DELETE** endpoints under `/api/items`.
 
-## ✨ Features
+- **Source Code/Frontend** – A lightweight frontend built with HTML, CSS, and Vanilla JavaScript that communicates with the backend using the Fetch API. It displays records, validates user input in real time, and supports creating, updating, and deleting records.
 
-- **Full CRUD** — create, list, update, and delete records through a REST API
-- **MongoDB persistence** via Mongoose schemas/models
-- **CORS-enabled** API so the static frontend can call it from `file://` or any local origin
-- **Zero-build frontend** — plain HTML, CSS, and JavaScript, no bundler or framework required
-- **Real-time client-side validation** for name, email, and phone with regex patterns, inline red-border feedback, and a submit button that's disabled until the form is valid
-- **Inline editing** — clicking "Edit" repopulates the form and switches the next submit to an update (`PUT`) instead of a create (`POST`)
-- **Delete confirmation** dialog to prevent accidental deletions
-- **Auto-restarting dev server** via Nodemon
+Both modules run independently. The frontend communicates with the backend over HTTP, allowing the application to function without requiring any frontend framework or build tools.
 
-## 🛠️ Tech Stack
+---
+
+# ✨ Features
+
+- Full CRUD operations using REST APIs
+- MongoDB database integration with Mongoose ODM
+- Responsive frontend built with HTML, CSS, and Vanilla JavaScript
+- Client-side validation for name, email, and phone number
+- Inline record editing
+- Delete confirmation dialog
+- CORS-enabled backend
+- Asynchronous API communication using Fetch API
+- Modular backend architecture
+- Auto-restarting development server using Nodemon
+
+---
+
+# 🛠️ Tech Stack
 
 | Layer | Technology |
-|---|---|
+|-------|------------|
 | Runtime | Node.js |
-| Web framework | Express 5 |
+| Backend Framework | Express.js |
 | Database | MongoDB |
-| ODM | Mongoose 8 |
-| Cross-origin requests | CORS |
-| Environment config | dotenv |
-| Dev tooling | Nodemon |
-| Frontend | HTML5, CSS3, Vanilla JavaScript (Fetch API) |
+| ODM | Mongoose |
+| Environment Variables | dotenv |
+| CORS | cors |
+| Development Tool | Nodemon |
+| Frontend | HTML5, CSS3, JavaScript (Fetch API) |
 | Icons | Google Material Symbols |
 
-## 📂 Project Structure
+---
 
+# 📂 Project Structure
+
+```text
+CRUD-REST-API-Management-System/
+│
+└── Source Code/
+    ├── Backend/
+    │   ├── node_modules/
+    │   ├── package.json
+    │   ├── package-lock.json
+    │   └── server.js
+    │
+    └── Frontend/
+        ├── CRUD.html
+        ├── script.js
+        └── styles.css
 ```
-CRUD-API_Project/
-├── backend/
-│   ├── node_modules/
-│   ├── package.json
-│   ├── package-lock.json
-│   └── server.js          # Express app, MongoDB connection, /api/items routes
-└── frontend/
-    ├── CRUD.html          # Form + records list container
-    ├── script.js          # Fetch calls, validation, DOM rendering
-    └── styles.css         # Styling for the form and record list
-```
 
-## ✅ Prerequisites
+---
 
-Make sure you have the following installed before you begin:
+# ✅ Prerequisites
 
-- [Node.js](https://nodejs.org/) v18 or higher (and npm)
-- [MongoDB](https://www.mongodb.com/try/download/community) running locally on the default port (`27017`), or a connection string to a remote instance
+Before running the project, make sure you have installed:
 
-## ⚙️ Installation & Setup
+- Node.js (v18 or above)
+- npm
+- MongoDB Community Server (or MongoDB Atlas)
 
-1. **Clone the repository**
+---
+
+# ⚙️ Installation & Setup
+
+## 1. Clone the Repository
 
 ```bash
-   git clone https://github.com/<your-username>/CRUD-API_Project.git
-   cd CRUD-API_Project/backend
+git clone https://github.com/Bijoy781999/CRUD-REST-API-Management-System.git
 ```
 
-2. **Install backend dependencies**
+## 2. Navigate to the Backend Folder
+
+### Windows
 
 ```bash
-   npm install
+cd "CRUD-REST-API-Management-System/Source Code/Backend"
 ```
 
-3. **Start MongoDB** (skip this step if you're using a remote/Atlas cluster)
+### Linux/macOS
 
 ```bash
-   mongod
+cd CRUD-REST-API-Management-System/Source\ Code/Backend
 ```
 
-   The app connects to `mongodb://localhost:27017/crudDb` and creates the `crudDb` database automatically the first time a record is saved.
+## 3. Install Dependencies
 
-4. **Run the backend server** — see [Running the Application](#running-the-application) below.
+```bash
+npm install
+```
 
-5. **Open the frontend** — open `frontend/CRUD.html` directly in your browser, or serve it with a tool like VS Code's "Live Server" extension.
+## 4. Start MongoDB
 
-## 🔑 Environment Variables
+```bash
+mongod
+```
 
-The backend loads variables from a `.env` file in `backend/` via `dotenv`. Create one with:
+The project connects to
 
 ```
+mongodb://localhost:27017/crudDb
+```
+
+by default.
+
+## 5. Run the Backend
+
+Development mode
+
+```bash
+npm run dev
+```
+
+Production mode
+
+```bash
+npm start
+```
+
+You should see
+
+```
+MongoDB Connected ✅
+Server is running on http://localhost:5000/api/items
+```
+
+## 6. Run the Frontend
+
+Open
+
+```
+Source Code/Frontend/CRUD.html
+```
+
+directly in your browser or use the **Live Server** extension in VS Code.
+
+---
+
+# 🔑 Environment Variables
+
+Create a `.env` file inside
+
+```
+Source Code/Backend/
+```
+
+```env
 PORT=5000
 ```
 
 | Variable | Description | Default |
-|---|---|---|
-| `PORT` | Port the Express server listens on | `5000` |
+|-----------|-------------|---------|
+| PORT | Express server port | 5000 |
 
-> **Note:** The MongoDB connection string is currently set directly in `server.js` (`mongodb://localhost:27017/crudDb`) rather than read from `.env`. To point the app at a different database, update that connection string directly (or wire it up to `process.env.MONGO_URI` yourself).
+> **Note:** The MongoDB connection string is currently defined inside `server.js`. You may replace it with an environment variable such as `MONGO_URI` for better configuration management.
 
-## ▶️ Running the Application
+---
 
-From the `backend/` directory:
+# ▶️ Running the Application
+
+From
+
+```
+Source Code/Backend
+```
+
+run
+
+Development
 
 ```bash
-# Development (auto-restarts on file changes via Nodemon)
 npm run dev
+```
 
-# Production
+Production
+
+```bash
 npm start
 ```
 
-You should see:
+Then open
 
 ```
-MongoDB Connected ✅
-Sever is running on http://localhost:5000/api/items
+Source Code/Frontend/CRUD.html
 ```
 
-Then open `frontend/CRUD.html` in your browser — it calls the API at `http://localhost:5000/api/items`, so make sure the port matches your `PORT` setting.
+in your browser.
 
-## 📡 API Reference
+---
 
-Base URL: `http://localhost:5000/api/items`
+# 📡 API Reference
 
-| Method | Endpoint | Description | Request Body |
-|---|---|---|---|
-| `GET` | `/api/items` | Get all items | – |
-| `POST` | `/api/items` | Create a new item | `{ "name", "email", "phone" }` |
-| `PUT` | `/api/items/:id` | Update an item by ID | `{ "name", "email", "phone" }` |
-| `DELETE` | `/api/items/:id` | Delete an item by ID | – |
+Base URL
 
-### Get all items
+```
+http://localhost:5000/api/items
+```
+
+| Method | Endpoint | Description |
+|----------|----------|-------------|
+| GET | /api/items | Retrieve all records |
+| POST | /api/items | Create a new record |
+| PUT | /api/items/:id | Update an existing record |
+| DELETE | /api/items/:id | Delete a record |
+
+---
+
+## Example Requests
+
+### Get All Records
 
 ```bash
 curl http://localhost:5000/api/items
 ```
 
-<details>
-<summary>Example response — <code>200 OK</code></summary>
-
-```json
-[
-  {
-    "_id": "6710f2a1c9d4e2b1a8f3d9c1",
-    "name": "Ada Lovelace",
-    "email": "ada@example.com",
-    "phone": "9876543210",
-    "__v": 0
-  }
-]
-```
-
-</details>
-
-### Create an item
+### Create Record
 
 ```bash
 curl -X POST http://localhost:5000/api/items \
-  -H "Content-Type: application/json" \
-  -d '{"name":"Ada Lovelace","email":"ada@example.com","phone":"9876543210"}'
+-H "Content-Type: application/json" \
+-d '{"name":"John Doe","email":"john@example.com","phone":"9876543210"}'
 ```
 
-<details>
-<summary>Example response — <code>201 Created</code></summary>
-
-```json
-{
-  "_id": "6710f2a1c9d4e2b1a8f3d9c1",
-  "name": "Ada Lovelace",
-  "email": "ada@example.com",
-  "phone": "9876543210",
-  "__v": 0
-}
-```
-
-</details>
-
-### Update an item
+### Update Record
 
 ```bash
-curl -X PUT http://localhost:5000/api/items/6710f2a1c9d4e2b1a8f3d9c1 \
-  -H "Content-Type: application/json" \
-  -d '{"name":"Ada Lovelace","email":"ada.lovelace@example.com","phone":"9876543210"}'
+curl -X PUT http://localhost:5000/api/items/<id> \
+-H "Content-Type: application/json" \
+-d '{"name":"John Doe","email":"john@example.com","phone":"9876543210"}'
 ```
 
-<details>
-<summary>Example response — <code>200 OK</code></summary>
-
-```json
-{
-  "_id": "6710f2a1c9d4e2b1a8f3d9c1",
-  "name": "Ada Lovelace",
-  "email": "ada.lovelace@example.com",
-  "phone": "9876543210",
-  "__v": 0
-}
-```
-
-</details>
-
-### Delete an item
+### Delete Record
 
 ```bash
-curl -X DELETE http://localhost:5000/api/items/6710f2a1c9d4e2b1a8f3d9c1
+curl -X DELETE http://localhost:5000/api/items/<id>
 ```
 
-<details>
-<summary>Example response — <code>200 OK</code></summary>
+---
 
-```json
-{
-  "message": "Item deleted successfully",
-  "deleted": {
-    "_id": "6710f2a1c9d4e2b1a8f3d9c1",
-    "name": "Ada Lovelace",
-    "email": "ada.lovelace@example.com",
-    "phone": "9876543210",
-    "__v": 0
-  }
-}
-```
+# 🔍 Frontend Validation
 
-</details>
+The application performs real-time validation for:
 
-All endpoints return `400 Bad Request` with `{ "error": "<message>" }` on validation/server errors; `PUT`/`DELETE` return `404 Not Found` if the ID doesn't exist.
+| Field | Validation |
+|--------|------------|
+| Name | Letters, spaces, periods (2–40 characters) |
+| Email | Standard email format |
+| Phone | 10–11 numeric digits |
 
-## 🔍 Frontend Form Validation
+The **Submit** button remains disabled until all inputs are valid.
 
-`script.js` validates every field client-side before it will submit, highlighting invalid fields in red as you type:
+---
 
-| Field | Rule |
-|---|---|
-| Name | 2–40 characters; letters, spaces, and periods only; must contain at least one uppercase and one lowercase letter |
-| Email | Standard `local@domain.tld` format |
-| Phone | 10–11 digits; non-numeric characters are stripped automatically as you type |
+# 🗺️ Roadmap
 
-The **Submit** button stays disabled until all three fields pass validation.
+- [ ] Move MongoDB URI to `.env`
+- [ ] Add Authentication & Authorization
+- [ ] Implement Search and Pagination
+- [ ] Add API testing using Jest and Supertest
+- [ ] Serve frontend through Express middleware
+- [ ] Deploy backend on Render/Railway
+- [ ] Deploy frontend on Netlify/Vercel
 
-## 🗺️ Roadmap
+---
 
-- [ ] Move the MongoDB connection string into `.env` (`MONGO_URI`)
-- [ ] Add a `.gitignore` for `node_modules/` and `.env`
-- [ ] Remove unused dependencies (`body-parser`, `dotevn`) from `package.json`
-- [ ] Add pagination and search/filter to the items list
-- [ ] Add authentication & authorization
-- [ ] Add automated tests (e.g. Jest + Supertest)
-- [ ] Serve the frontend via Express static middleware or a bundler
-- [ ] Deploy the backend (Render/Railway) and frontend (Netlify/Vercel)
+# 📄 License
 
-## 📄 License
+**No License**
 
-This project is licensed under the **ISC License**, as declared in `backend/package.json`.
+This repository is provided for educational and portfolio purposes.
 
-## 🙏 Acknowledgements
+No permission is granted to copy, modify, distribute, or use this source code without explicit permission from the author.
 
-- [Express](https://expressjs.com/)
-- [Mongoose](https://mongoosejs.com/)
-- [MongoDB](https://www.mongodb.com/)
-- [Google Material Symbols](https://fonts.google.com/icons) for the UI icons
+---
 
-## 👤 Author
+# 🙏 Acknowledgements
 
-**[Your Name]**
-- GitHub: [@your-username](https://github.com/your-username)
-- Email: your.email@example.com
+- Express.js
+- MongoDB
+- Mongoose
+- Node.js
+- Google Material Symbols
+
+---
+
+# 👤 Author
+
+## Bijoy Bhadra
+
+**GitHub**
+
+https://github.com/Bijoy781999
+
+**LinkedIn**
+
+https://www.linkedin.com/in/bijoy-bhadra-5941bb370/
+
+**Email**
+
+bijoy.bhadra222@gmail.com
