@@ -437,7 +437,7 @@ DELETE /api/items/6856b3c3d19b3d2d2c5e4b33
 
 ---
 
-# ⚙️ Getting Started
+# 🚀 Getting Started
 
 Follow these steps to set up and run the project on your local machine.
 
@@ -453,7 +453,11 @@ Ensure the following software is installed before running the application.
 
 ---
 
-# 📥 Clone the Repository
+# 📦 Installation
+
+Follow the steps to install the repository.
+
+## Clone the Repository
 
 ```bash
 git clone https://github.com/Bijoy781999/CRUD-REST-API-Management-System.git
@@ -467,7 +471,7 @@ cd CRUD-REST-API-Management-System
 
 ---
 
-# 📦 Install Dependencies
+## Install Dependencies
 
 Navigate to the backend directory.
 
@@ -483,7 +487,7 @@ npm install
 
 ---
 
-# ▶️ Start MongoDB
+## Start MongoDB
 
 Make sure your local MongoDB service is running before starting the server.
 
@@ -495,7 +499,11 @@ mongodb://localhost:27017/crudDb
 
 ---
 
-# 🚀 Run the Backend Server
+# 🚀 Running the Application
+
+Ready to use the CRUD-API.
+
+## Start the Backend Server
 
 Inside the **backend** directory, start the Express server.
 
@@ -512,7 +520,7 @@ Connected to MongoDB
 
 ---
 
-# 🌐 Launch the Frontend
+## Launch the Frontend
 
 Open the **frontend** folder and launch:
 
@@ -658,7 +666,7 @@ git push origin feature/your-feature-name
 
 ---
 
-# 👨‍💻 Author
+# 👤 Author
 
 <div align="center">
 
