@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD API</title>
+    <!-- Use Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="app-header">
+            <h1>User Management</h1>
+            <p>Manage your user records effortlessly.</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Glassmorphism Form Card -->
+            <div class="glass-card form-card">
+                <h2>Add New User<p style="font-size: 11px; color: #ff9292;">All * are required fields.</p>
+                </h2>
+                <form id="crud-form" name="CRUDform" method="post" action="/api/items">
+                    <div class="input-group">
+                        <label for="name">Name*</label>
+                        <div class="input-wrapper">
+                            <span class="material-symbols-outlined icon">person</span>
+                            <input type="text" id="name" name="Name" placeholder="Full Name" value="" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email*</label>
+                        <div class="input-wrapper">
+                            <span class="material-symbols-outlined icon">mail</span>
+                            <input type="email" id="email" name="Email" placeholder="someone@example.com" value=""
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="phN">Phone Number*</label>
+                        <div class="input-wrapper">
+                            <span class="material-symbols-outlined icon">phone</span>
+                            <input type="text" id="phN" name="Phone" placeholder="10-digit number" value="" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" name="submit" id="sBtn" class="primary-btn" disabled>
+                        <span>Submit</span>
+                        <span class="material-symbols-outlined">send_and_archive</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- User List Display Area -->
+            <div class="users-section">
+                <h2>Users Data</h2>
+                <div id="display" class="users-grid">
+                    <!-- Dynamic user cards will be injected here by script.js -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit User Modal -->
+    <div id="edit-modal" class="modal-overlay">
+        <div class="glass-card form-card modal-content">
+            <h2>Edit User</h2>
+            <form id="edit-form" name="EditForm">
+                <input type="hidden" id="edit-id">
+                <div class="input-group">
+                    <label for="edit-name">Name</label>
+                    <div class="input-wrapper">
+                        <span class="material-symbols-outlined icon">person</span>
+                        <input type="text" id="edit-name" placeholder="Full Name" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="edit-email">Email</label>
+                    <div class="input-wrapper">
+                        <span class="material-symbols-outlined icon">mail</span>
+                        <input type="email" id="edit-email" placeholder="someone@example.com" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="edit-phone">Phone Number</label>
+                    <div class="input-wrapper">
+                        <span class="material-symbols-outlined icon">phone</span>
+                        <input type="text" id="edit-phone" placeholder="10-digit number" required>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="cancel-btn" onclick="closeEditModal()">Cancel</button>
+                    <button type="submit" id="edit-sBtn" class="primary-btn">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete User Modal -->
+    <div id="delete-modal" class="modal-overlay">
+        <div class="glass-card form-card modal-content" style="text-align: center;">
+            <h2 style="color: #ef4444; margin-bottom: 10px;">Delete User</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">Are you sure you want to permanently delete
+                this user? This action cannot be undone.</p>
+            <input type="hidden" id="delete-id">
+            <div class="modal-actions">
+                <button type="button" class="cancel-btn" onclick="closeDeleteModal()">Cancel</button>
+                <button type="button" id="confirm-delete-btn" class="danger-btn"
+                    onclick="confirmDelete()">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
